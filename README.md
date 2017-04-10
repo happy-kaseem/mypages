@@ -14,6 +14,8 @@ I looked at every possible CMS and Framework I could find until I finally found 
 
 For more information, go to their [website https://processwire.com](https://processwire.com)
 
+The development for version 3.x is done on Github under [https://github.com/processwire/processwire](https://github.com/processwire/processwire) 
+
 ## Language support in processwire.com
 
 Before we start explaining the language support of processwire.com it is helpful to understand something about the way processwire.com (or short PW) organises data.
