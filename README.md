@@ -30,6 +30,7 @@ As much in the front-end as in the back-end, multi-language support is fully imp
 
 What took me as a developer the longest to understand are the following things:
 - the default language has a special significance and can be seen as the language like it is used in a single-language site
-- in the database, the multi-language field data is stored for the default language in the default location whereas the other languages use separate data-n fields (for example column 'data' for the default English, column 'data1012' for German, column 'data1020' for the next language etc.)
-- ...
+- the user language is usually prefixed to the url (for example /home for the default language, /de/home for German etc.)
+- in the database, the multi-language field data is stored for the default language in the default location whereas the other languages use separate data-n columns (for example column 'data' for the default English, column 'data1012' for German, column 'data1020' for the next language etc.) are added.
+- at page rendering time, the fields are automatically filled either with the default language data or if available, the user language data for the language the user views the page for.
 
