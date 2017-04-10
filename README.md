@@ -1,6 +1,5 @@
 ---
 title: What and why?
-layout: post
 ---
 
 # Welcome to happy-kaseem Pages
