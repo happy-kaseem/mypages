@@ -20,13 +20,13 @@ The development for version 3.x is done on Github under [https://github.com/proc
 
 Before we start explaining the language support of processwire.com it is helpful to understand something about the way processwire.com (or short PW) organises data.
 
-Essentially everything in PW can be seen as a "page". A "page" contains information organised by "fields" of a specific "type". A standard web page would be defined by a template containing some standard fields named "title", "body", "summary" etc. whereas each of these fields would by of type "text". Other more sophisticated pages might call for fields of types like "URL", "DateTime" or more. 
+Essentially everything in PW can be seen as a _page_. A _page_ contains information organised by _fields_ of a specific _type_. A standard web page would be defined by a template containing some standard fields named _title_, _body_, _summary_ etc. whereas each of these fields would by of type _text_. Other more sophisticated pages might call for fields of types like _URL_, _DateTime_ or more. 
 
-The data is stored in separate tables for each field (named "field_fieldname") with two default columns names "pages_id" and "data" for each field value per page (and more columns as the type stored might require).
+The data is stored in separate tables for each field (named _‘field‘_fieldname_) with two default columns names _pages_id_ and _data_ for each field value per page (and more columns as the type stored might require).
 
 This might sound like a very primitive concept. But if we really look at it and how PW has implemented this, it becomes very powerful, flexible and fast.
 
-So how does now PW implement language support? Besides a number of tools to setup languages, select the user language and translate text, PW offers special multi-language "types" for "fields".
+So how does now PW implement language support? Besides a number of tools to setup languages, select the user language and translate text, PW offers special multi-language _types_ for _fields_.
 
 As much in the front-end as in the back-end, multi-language support is fully implemented and working.
 
