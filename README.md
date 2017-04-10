@@ -22,6 +22,8 @@ Before we start explaining the language support of processwire.com it is helpful
 
 Essentially everything in PW can be seen as a "page". A "page" contains information organised by "fields" of a specific "type". A standard web page would be defined by a template containing some standard fields named "title", "body", "summary" etc. whereas each of these fields would by of type "text". Other more sophisticated pages might call for fields of types like "URL", "DateTime" or more. 
 
+The data is stored in separate tables for each field (named "field_fieldname") with two default columns names "pages_id" and "data" for each field value per page (and more columns as the type stored might require).
+
 This might sound like a very primitive concept. But if we really look at it and how PW has implemented this, it becomes very powerful, flexible and fast.
 
 So how does now PW implement language support? Besides a number of tools to setup languages, select the user language and translate text, PW offers special multi-language "types" for "fields".
