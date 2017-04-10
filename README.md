@@ -1,5 +1,3 @@
-# What and why?
-
 # Welcome to happy-kaseem Pages
 
 A few months ago I started looking for a flexible way to create an online information system for an organisation. Personally I had been working with PHP and I am fairly familiar with HTML/CSS for now almost 20 years (this might tell you something on how old I am).
