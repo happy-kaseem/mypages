@@ -1,5 +1,9 @@
-# What and why?
-## Welcome to happy-kaseem Pages
+---
+title: What and why?
+layout: post
+---
+
+# Welcome to happy-kaseem Pages
 
 A few months ago I started looking for a flexible way to create an online information system for an organisation. Personally I had been working with PHP and I am fairly familiar with HTML/CSS for now almost 20 years (this might tell you something on how old I am).
 
@@ -16,7 +20,7 @@ For more information, go to their [website https://processwire.com](https://proc
 
 The development for version 3.x is done on Github under [https://github.com/processwire/processwire](https://github.com/processwire/processwire) 
 
-## Language support in processwire.com
+# Language support in processwire.com
 
 Before we start explaining the language support of processwire.com it is helpful to understand something about the way processwire.com (or short PW) organises data.
 
@@ -30,7 +34,7 @@ So how does now PW implement language support? Besides a number of tools to setu
 
 As much in the front-end as in the back-end, multi-language support is fully implemented and working.
 
-### Things to get used to when working with languages
+## Things to get used to when working with languages
 
 What took me as a developer the longest to understand are the following things:
 - the default language has a special significance and can be seen as the language like it is used in a single-language site
