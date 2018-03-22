@@ -37,3 +37,30 @@ What took me as a developer the longest to understand are the following things:
 - in the database, the multi-language field data is stored for the default language in the default location whereas the other languages use separate data-n columns (for example column `data` for the default English, column `data1012` for German, column `data1020` for the next language etc.) are added.
 - at page rendering time, the fields are automatically filled either with the default language data or if available, the user language data for the language the user views the page for.
 
+# How does PW handle page requests
+
+What happens within PW between the request of a page and the actual answer of the server back to the web browser. 
+
+## The Bootstrap Index File
+
+In a default installation of PW, the http requests must be directed to index.php (the bootstrap index file) in the installation root folder. See PW documentation about [Directory Structure](https://processwire.com/docs/directories/) for details. In the default installation, the settings in the .htaccess file make sure that all requests to files in the installation are correctly handled. Here is an incomplete list (full details can be found in the root .htaccess file):
+- requests to PW system files are denied. These are files like inc, info, info\.json, module, sh, sql.
+- requests to PW system files in the site folder are denied (folders assets/cache, logs, backups, sessions, config. install, tmp)
+- requests to PW configuration files are denied (/site/config.php)
+- direct requests to PW template files are denied (/site/templates, /wire/templates-admin)
+- requests to PW modules are denied (/site/module and /wire/module folders)
+
+## What does the bootstrap index file do?
+
+The bootstrap index PHP file does the following:
+- Initialize $rootPath with PHP \_\_DIR\_\_, \_\_DIR\_\_ is a magic constant indicating the directory of the index.php file, the root directory ([see PHP manual for details](http://php.net/manual/en/language.constants.predefined.php)). The directory separator is forced to be '/' throughout PW.
+
+$composerAutoloader = $rootPath . '/vendor/autoload.php'; // composer autoloader
+if(file_exists($composerAutoloader)) require_once($composerAutoloader);
+if(!class_exists("ProcessWire", false)) require_once("$rootPath/wire/core/ProcessWire.php");
+$config = ProcessWire::buildConfig($rootPath);
+if(!$config->dbName) {
+
+
+
+
