@@ -34,7 +34,7 @@ As much in the front-end as in the back-end, multi-language support is fully imp
 What took me as a developer the longest to understand are the following things:
 - the default language has a special significance and can be seen as the language like it is used in a single-language site
 - the user language is usually prefixed to the url (for example /home for the default language, /de/home for German etc.)
-- in the database, the multi-language field data is stored for the default language in the default location whereas the other languages use separate data-n columns (for example column `data` for the default English, column `data1012` for German, column `data1020` for the next language etc.) are added.
+- in the database, the multi-language field data is stored for the default language in the default location whereas the other languages use separate data-n columns (for example column `data` for the default English, column `data1012` for German, column `data1020` for the next language etc.) are added. Note that the nubers depend on the installation. They are the page ids for the corresponding languages.
 - at page rendering time, the fields are automatically filled either with the default language data or if available, the user language data for the language the user views the page for.
 
 # How does PW handle page requests
@@ -54,12 +54,10 @@ In a default installation of PW, the http requests must be directed to index.php
 
 The bootstrap index PHP file does the following:
 - Initialize $rootPath with PHP \_\_DIR\_\_, \_\_DIR\_\_ is a magic constant indicating the directory of the index.php file, the root directory ([see PHP manual for details](http://php.net/manual/en/language.constants.predefined.php)). The directory separator is forced to be '/' throughout PW.
+- Initialize the composer autoloader as $composerAutoloader = $rootPath . '/vendor/autoload.php'. If the autoloader file exists, then load its PHP code now
+- If the class "ProcessWire" has not been loaded yet, load it now from $rootPath/wire/core/ProcessWire.php
+- Load the configuration data from the rootPath and initialize $config = ProcessWire::buildConfig($rootPath);
 
-$composerAutoloader = $rootPath . '/vendor/autoload.php'; // composer autoloader
-if(file_exists($composerAutoloader)) require_once($composerAutoloader);
-if(!class_exists("ProcessWire", false)) require_once("$rootPath/wire/core/ProcessWire.php");
-$config = ProcessWire::buildConfig($rootPath);
-if(!$config->dbName) {
 
 
 
