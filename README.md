@@ -37,6 +37,36 @@ What took me as a developer the longest to understand are the following things:
 - in the database, the multi-language field data is stored for the default language in the default location whereas the other languages use separate data-n columns (for example column `data` for the default English, column `data1012` for German, column `data1020` for the next language etc.) are added. Note that the nubers depend on the installation. They are the page ids for the corresponding languages.
 - at page rendering time, the fields are automatically filled either with the default language data or if available, the user language data for the language the user views the page for.
 
+## An idea for a translation tool for PW
+
+PW is great on how it handles multi-language fields using the built-in (core) Language Support module and the corresponding fields. I am trying to find a tool which supports the workflow of translating fields to different language.
+
+### Scenario
+
+My idea is the following workflow.
+- an editor writes one article in a specific source language
+- translators translate the article to their target language
+- the editor makes changes in the source language
+- the translators see the changes and update the target language
+
+For this we need a tool which does the following
+- keep track of the changes to the article in every language
+- show differences in the source language to show what needs to be translated in the target language
+
+This is a typical scenario (explicit example in English and German)
+
+| Revision | Source (English)                              | Target (German)                                    |
+| --------:| --------------------------------------------- | -------------------------------------------------- |
+|      1   | This is the first version                     |                                                    |
+|      2   | This is the corrected first version           |                                                    |
+|      3   |                                               | Dies ist die korrigierte erste Version             |
+|      4   | This is the extended, corrected first version |                                                    |
+|      5   |                                               | Dies ist die erweiterte, korrigierte erste Version |
+
+This revision history is typical when two different people work on the translation. Which would be the case in most situations.
+
+So the tool should help the translator at any time to see what has changed in the source language since the last time he has made an update. So this would be after revision 2: All of the source, revision 2 needs to be translated (it is all new). And after Revision 4: Only the changes made to the source (in this case "extended, ") need to be translated and should be found by the tool based on the revision history since the tool knows that the translation in revision 3 is based on original revision 2. 
+
 # How does PW handle page requests
 
 What happens within PW between the request of a page and the actual answer of the server back to the web browser. 
