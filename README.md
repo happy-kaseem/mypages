@@ -39,7 +39,7 @@ What took me as a developer the longest to understand are the following things:
 
 ## An idea for a translation tool for PW
 
-PW is great on how it handles multi-language fields using the built-in (core) Language Support module and the corresponding fields. I am trying to find a tool which supports the workflow of translating fields to different language.
+PW is great on how it handles multi-language fields using the built-in (core) Language Support module and the corresponding fields. I am trying to find a tool which supports the workflow of translating fields to different languages.
 
 ### Scenario
 
@@ -51,7 +51,7 @@ My idea is the following workflow.
 
 For this we need a tool which does the following
 - keep track of the changes to the article in every language
-- show differences in the source language to show what needs to be translated in the target language
+- show differences in the source language to show what needs to be translated in the target language (when in doubt, the translator can choose the version of the source which is used to show the differences).
 
 This is a typical scenario (explicit example in English and German)
 
@@ -65,7 +65,7 @@ This is a typical scenario (explicit example in English and German)
 
 This revision history is typical when two different people work on the translation. Which would be the case in most situations.
 
-So the tool should help the translator at any time to see what has changed in the source language since the last time he has made an update. So this would be after revision 2: All of the source, revision 2 needs to be translated (it is all new). And after Revision 4: Only the changes made to the source (in this case "extended, ") need to be translated and should be found by the tool based on the revision history since the tool knows that the translation in revision 3 is based on original revision 2. 
+So the tool should help the translator at any time to see what has changed in the source language since the last time he has made an update. So this would be after revision 2: All of the source, revision 2 needs to be translated (it is all new). And after Revision 4: Only the changes made to the source (comparing revision 2 and 4, in this case "extended, ") need to be translated and should be found by the tool based on the revision history since the tool knows that the translation in revision 3 is based on original revision 2. When the translator has some doubts, he can also compare the differences between source revision 1 and 4 (or 1 and 2 if that is helpful).
 
 # How does PW handle page requests
 
